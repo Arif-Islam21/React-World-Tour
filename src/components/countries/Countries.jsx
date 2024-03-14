@@ -23,23 +23,28 @@ const Countries = () => {
 
   const handleVisitedFlags = (flag) => {
     // console.log(flags);
-    console.log("flags loading");
-    setVisitedCountries(flag);
+    const newVisitedFlags = [...visitedFlags, flag];
+    setVisitedFlags(newVisitedFlags);
   };
 
   return (
     <div>
       <h3>Countries {countries.length}</h3>
+      {/* DISPLAY VISITED COUNTRIES */}
       <div>
         <h5>Visited Countries: {visitedCountries.length}</h5>
         <ul>
           {visitedCountries.map((country) => (
-            <div key={country.cca3}>
-              <li>{country.name.common}</li>
-            </div>
+            <li key={country.cca3}>{country.name.common}</li>
           ))}
         </ul>
       </div>
+      <div className="flag-container">
+        {visitedFlags.map((flag, idx) => (
+          <img key={idx} src={flag}></img>
+        ))}
+      </div>
+      {/* DISPLAY COUNTRIES */}
       <div className="countries-container">
         {countries.map((country) => (
           <Country
