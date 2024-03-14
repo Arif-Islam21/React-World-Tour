@@ -16,7 +16,7 @@ const Countries = () => {
 
   const handleVisitedCountry = (country) => {
     // console.log(country);
-    console.log("add this to your visited country");
+    // console.log("add this to your visited country");
     const newVisitedCountry = [...visitedCountries, country];
     setVisitedCountries(newVisitedCountry);
   };
@@ -26,6 +26,9 @@ const Countries = () => {
     const newVisitedFlags = [...visitedFlags, flag];
     setVisitedFlags(newVisitedFlags);
   };
+
+  // REMOVE ITEM FROM AN ARRAY IN A STATE
+  // USE FILTER TO SELECT ALL THE ELEMENT EXCEPT THE ONE YOU WANT TO REMOVE
 
   return (
     <div>
